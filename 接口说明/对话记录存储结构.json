@@ -1,0 +1,39 @@
+{
+  "userId": "dhdghfyryryb",
+  "createDate": "2025-05-27",
+  "createTime": 1716806400000,
+  "chatList": [
+    {
+      "role": "user",
+      "content": "胃癌的xxxx",
+      "displayContent": "胃癌的xxxx",
+      "uploadFileList": [
+        {
+          "fileName": "XXX.pdf",
+          "fileSize": "150KB",
+          "fileType": "PDF",
+          "docId": "DDEER44"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": "xxxxxx",
+      "readFileData": {
+        "type": "readDocument",
+        "statusInfo": "completed",
+        "promptInfo": "正在读取文档：xxx.pdf",
+        "fileList": ["xxxx.pdf"]
+      }
+    },
+    {
+      "role": "user",
+      "content": "xxxx",
+      "displayContent": "xxx"
+    },
+    {
+      "role": "assistant",
+      "content": "xxxxx..."
+    }
+  ]
+}

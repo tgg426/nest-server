@@ -1,0 +1,25 @@
+[
+  {
+    "role": "user",
+    "content": "胃癌有什么症状",
+    "displayContent": "胃癌有什么症状",
+    "uploadFileList": [
+      {
+        "fileName": "xxx.pdf",
+        "fileSize": "1.2MB",
+        "fileType": "pdf",
+        "docId": "abc123"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "xxxxxxxx",
+    "readFileData": {
+      "type": "readDocument",
+      "statusInfo": "completed",
+      "promptInfo": "正在阅读文档 | 正在检索知识库",
+      "fileList": ["xxx.pdf"]
+    }
+  }
+]

@@ -1,0 +1,16 @@
+bind 0.0.0.0
+protected-mode yes
+port 6379
+daemonize yes
+logfile ""
+databases 16
+
+# 示例密码配置，实际部署时请修改为强密码
+requirepass your_redis_password
+
+save 900 1
+save 300 10
+save 60 10000
+
+appendonly no
+

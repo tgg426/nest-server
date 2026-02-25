@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    async function sendMessage() {
+      const response = await fetch('http://localhost:7000/chat/sendmessage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization:
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjY4MzRlOTM0MjBhOTI2Nzc3OWMzNDYxNSIsImlhdCI6MTc0ODI5ODU0MSwiZXhwIjoxNzQ5MTYyNTQxfQ.EVgEGyfm-BRle9I8uGt9r7yFrz-uM2igBOYgHSptZ9U',
+        },
+        body: JSON.stringify({
+          content: '艾滋病有什么危害', // 这里是你要发送给后端的数据
+          sessionId: 'null',
+          // uploadFileList: [
+          //   {
+          //     fileName: '胃癌偏爱这 6 类人，你是其中之一吗？.pdf',
+          //     fileSize: '136.38kb',
+          //     fileType: 'PDF',
+          //     docId: '6837473508b39524dd0ace69',
+          //   },
+          // ],
+          isKnowledgeBased: true,
+        }),
+      });
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+
+      let receivedText = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) {
+          console.log('流式输出完成');
+          break;
+        }
+        const chunk = decoder.decode(value);
+        console.log('接收到数据块：', chunk);
+      }
+    }
+
+    sendMessage();
+  </script>
+</html>
