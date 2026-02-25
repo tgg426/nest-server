@@ -3,8 +3,23 @@
 本项目是一个基于 NestJS 的 **AI 医疗 RAG（Retrieval-Augmented Generation）服务端**，提供用户注册登录、聊天会话管理、知识库文件管理等能力，并通过阿里云通义千问与向量数据库实现智能问答与对话。
 
 主要用途：
-- **家庭医生 / 医疗智能体后端**
+- **AI医疗智能体后端**
 - 支持会话上下文、知识库检索、对话记录持久化与缓存
+
+
+
+## 技术栈
+
+- **后端框架**：`NestJS`（TypeScript）
+- **语言**：TypeScript（Node.js）
+- **数据库**
+  - `MongoDB` + `mongoose`：存储用户、聊天、文件等业务数据
+- **缓存与消息**
+  - `Redis`：对话缓存、终止输出等
+- **AI / RAG 相关**
+  - 阿里云 **通义千问** 兼容 OpenAI 接口（chat completions）
+  - 阿里云 **DashScope MCP WebSearch**（联网搜索工具）
+  - 向量数据库 **Milvus**
 
 ## 功能概览
 
@@ -26,18 +41,6 @@
   - 集成阿里云 WebSearch MCP，实现联网搜索工具
 
 
-## 技术栈
-
-- **后端框架**：`NestJS`（TypeScript）
-- **语言**：TypeScript（Node.js）
-- **数据库**
-  - `MongoDB` + `mongoose`：存储用户、聊天、文件等业务数据
-- **缓存与消息**
-  - `Redis`：对话缓存、终止输出等
-- **AI / RAG 相关**
-  - 阿里云 **通义千问** 兼容 OpenAI 接口（chat completions）
-  - 阿里云 **DashScope MCP WebSearch**（联网搜索工具）
-  - 向量数据库 **Milvus**（通过环境变量 `MILVUS_ADDRESS` 配置）
 
 
 
